@@ -1,8 +1,17 @@
 package graphic.view;
 
-import javax.swing.JFrame;
+import javax.swing.JPanel;
+import graphic.controller.FirstGUIController;
 
-public class FirstPanel
+public class FirstPanel extends JPanel
 {
+	private FirstGUIController baseController;
+	
+	public FirstPanel(FirstGUIController baseController)
+	{
+		super();
+		this.baseController = baseController;
+	}
+	
 	
 }
