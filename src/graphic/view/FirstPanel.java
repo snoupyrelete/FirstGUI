@@ -22,11 +22,7 @@ public class FirstPanel extends JPanel {
 		colorButton = new JButton("Color!");
 		randomButton = new JButton("Random!");
 		baseLayout = new SpringLayout();
-		baseLayout.putConstraint(SpringLayout.EAST, colorButton, -10, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, randomButton, 0, SpringLayout.EAST, colorButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, colorButton, 30, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, colorButton, 358, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, randomButton, 89, SpringLayout.NORTH, this);
+		
 		
 		setupPanel();
 		setupLayout();
@@ -45,6 +41,20 @@ public class FirstPanel extends JPanel {
 	// Where to put them - centered horizontally by default garbage dump helper constraint method
 	private void setupLayout() 
 	{
+		baseLayout.putConstraint(SpringLayout.EAST, colorButton, -10, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, randomButton, 0, SpringLayout.EAST, colorButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, colorButton, 30, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, colorButton, 358, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, randomButton, 89, SpringLayout.NORTH, this);
+	}
+	
+	private void changeBackground()
+	{
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
 	}
 
 	// Tells them how to act - anonymous instance of a listener - which has a
@@ -65,6 +75,7 @@ public class FirstPanel extends JPanel {
 			public void actionPerformed(ActionEvent click)
 			{
 				System.out.println("You clicked randomButton!");
+				changeBackground();
 			}
 		});
 	}
