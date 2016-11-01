@@ -1,5 +1,6 @@
 package graphic.controller;
 import graphic.view.FirstFrame;
+import graphic.view.FirstPanel;
 
 public class FirstGUIController 
 {
